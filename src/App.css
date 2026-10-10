@@ -1,0 +1,132 @@
+.elow-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0b0c10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.elow-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transform: scale(1.01);
+  transition: filter 0.3s ease;
+}
+
+.elow-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(10, 10, 18, 0.15) 60%,
+    rgba(10, 10, 18, 0.35) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Desktop Workspace */
+.elow-workspace {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 900px;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  padding: 2rem 1rem;
+}
+
+/* Folder Section */
+.elow-folder-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.elow-folder-section:hover {
+  transform: translateY(-2px);
+}
+
+.elow-folder-label {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(20, 20, 28, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+/* Paper cards inside folder */
+.elow-paper-card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px;
+  background: #ffffff;
+  color: #1c1c1e;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.elow-paper-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.elow-paper-card span {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #2c2c2e;
+  white-space: nowrap;
+}
+
+/* GlassIcons Section */
+.elow-glass-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.35));
+}
+
+/* Dock positioning at bottom */
+.dock--bottom {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}

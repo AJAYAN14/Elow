@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Elow",
+  "version": "1.0.0",
+  "description": "Elow - 优雅的 macOS 风格浏览器新标签页扩展",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "topSites",
+    "bookmarks",
+    "history",
+    "storage"
+  ],
+  "action": {
+    "default_title": "Elow New Tab"
+  }
+}
